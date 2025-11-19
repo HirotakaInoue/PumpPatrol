@@ -9,7 +9,7 @@
   },
   "workspaceFolder": "/workspaces/PumpPatrol",
   "remoteUser": "vscode",
-  "postCreateCommand": "corepack enable && corepack prepare pnpm@latest --activate",
+  "postCreateCommand": "cd web && pnpm install",
   "forwardPorts": [
     3000,
     8080
@@ -21,8 +21,23 @@
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "ms-azuretools.vscode-docker",
-        "openai.chatgpt"
-      ]
+        "openai.chatgpt",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "[go]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "golang.go"
+        },
+        "[typescript]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescriptreact]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      }
     }
   }
 }

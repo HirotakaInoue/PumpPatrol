@@ -1,0 +1,80 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #020617;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero__summary {
+  color: #cbd5f5;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.hero__button {
+  border-radius: 9999px;
+  padding: 0.9rem 1.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 150ms ease, opacity 150ms ease;
+  min-width: 200px;
+  text-align: center;
+}
+
+.hero__button:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.hero__button--primary {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.hero__button--ghost {
+  border-color: rgba(248, 250, 252, 0.4);
+  color: #f8fafc;
+}
