@@ -1,0 +1,43 @@
+.registorLabel {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ボタン本体 */
+.registorLabelButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;                 
+  padding: 14px 20px;
+
+  border-radius: 12px;
+  border: 1px solid #ee0e0e;
+
+  background-color: #333;   
+  color: #dad5d5;
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* ホバー時：少し濃くしてボタンらしさを出す */
+.registorLabelButton:hover {
+  background-color: #d5d5d5;
+}
+
+/* クリックアニメーション：軽く押し込まれる感じ */
+.registorLabelButton:active {
+  transform: scale(0.98);
+}
+
+.registorLabelButton img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
