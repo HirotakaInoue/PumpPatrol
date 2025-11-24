@@ -4,7 +4,9 @@
     "dockerfile": "Dockerfile",
     "context": "..",
     "args": {
-      "NODE_VERSION": "20"
+      "NODE_VERSION": "24",
+      "PNPM_VERSION": "10.22.0",
+      "RUST_VERSION": "1.91.1"
     }
   },
   "workspaceFolder": "/workspaces/PumpPatrol",
@@ -17,7 +19,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "golang.go",
+        "rust-lang.rust-analyzer",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "ms-azuretools.vscode-docker",
@@ -25,9 +27,9 @@
         "ms-azuretools.vscode-docker"
       ],
       "settings": {
-        "[go]": {
+        "[rust]": {
           "editor.formatOnSave": true,
-          "editor.defaultFormatter": "golang.go"
+          "editor.defaultFormatter": "rust-lang.rust-analyzer"
         },
         "[typescript]": {
           "editor.formatOnSave": true,

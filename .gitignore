@@ -1,2 +1,6 @@
 AGENTS.md
 .DS_Store
+.pnpm-store
+
+Cargo.lock
+backend/target

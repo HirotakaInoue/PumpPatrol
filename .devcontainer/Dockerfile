@@ -2,11 +2,17 @@
 
 ARG NODE_VERSION=24
 ARG PNPM_VERSION=10.22.0
+ARG RUST_VERSION=1.91.1
 
-FROM mcr.microsoft.com/devcontainers/go:1.23
+FROM mcr.microsoft.com/devcontainers/rust:latest
 
 ARG NODE_VERSION
 ARG PNPM_VERSION
+ARG RUST_VERSION
+
+ENV RUSTUP_HOME=/usr/local/rustup \
+    CARGO_HOME=/usr/local/cargo \
+    PATH=/usr/local/cargo/bin:${PATH}
 
 RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
@@ -28,13 +34,13 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install golangci-lint
-ARG GOLANGCI_LINT_VERSION=v2.6.2
-RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin ${GOLANGCI_LINT_VERSION}
+# Rustとcargoをインストール（ベースイメージに含まれていない場合に備えて）
+RUN mkdir -p ${RUSTUP_HOME} ${CARGO_HOME} \
+    && export RUSTUP_HOME=${RUSTUP_HOME} CARGO_HOME=${CARGO_HOME} \
+    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile default --default-toolchain ${RUST_VERSION} \
+    && ${CARGO_HOME}/bin/rustup component add rustfmt clippy \
+    && chown -R vscode:vscode ${RUSTUP_HOME} ${CARGO_HOME}
 
-# Common Go development utilities (always latest)
-RUN GOBIN=/usr/local/bin go install github.com/air-verse/air@latest \
-    && GOBIN=/usr/local/bin go install github.com/go-task/task/v3/cmd/task@latest
 
 WORKDIR /workspaces/PumpPatrol
 
