@@ -1,35 +1,74 @@
 # PumpPatrol
 
-This repository now contains a Go backend starter and a Next.js web frontend. Tooling is wired for
-linting/formatting on both sides so you can focus on iterating quickly.
+Fitness tracking application with Rust backend (Axum) and React frontend (Vite).
 
-## Tool versions
+## Tech Stack
 
-- Go 1.23 (devcontainer base image)
-- golangci-lint 2.6.2
-- Air (latest) / Task CLI (latest) installed during build
-- Node.js 20, pnpm 10.22.0
-- Next.js ^16.0.3, React ^19.2.0, TypeScript ^5.9.3
-- ESLint ^9.39.1, Prettier ^3.6.2
+### Backend
+- Rust 1.91.1
+- Axum 0.8.7 (Web framework)
+- SQLx 0.8 (PostgreSQL driver)
+- PostgreSQL 18
 
-## Requirements
+### Frontend
+- React 19+ with TypeScript
+- Vite 6+ (Build tool)
+- Node.js 24, pnpm 10.22.0
 
-- Go 1.23+
-- pnpm 10 (automatically installed in the devcontainer)
+### Development
+- Dev Container with Docker Compose
+- PostgreSQL container for local development
 
-## Useful commands
+## Quick Start
+
+### Start Development Servers
+
+```bash
+# Start both backend and frontend
+make dev
+# or
+./dev.sh
+
+# Start individually
+make backend-run    # Backend on port 8080
+make web-dev        # Frontend on port 5173
+```
+
+### Database Management
+
+```bash
+# Run migrations
+make migrate
+
+# Rollback last migration
+make migrate-revert
+```
+
+### Other Commands
 
 ```bash
 # Backend
-make backend-run     # start the HTTP server
-make backend-test    # run Go tests
-make backend-lint    # run golangci-lint
+make backend-test    # Run Rust tests
+make backend-lint    # Run clippy
 
 # Frontend
-make web-dev         # start Next.js dev server
-make web-lint        # run ESLint
-make web-format      # apply Prettier
+make web-build       # Build for production
+make web-lint        # Run ESLint
+make web-format      # Apply Prettier
+
+# Cleanup
+make clean          # Remove build artifacts
 ```
 
-The devcontainer automatically installs pnpm and will run `pnpm install` inside `web/` on first
-start. Outside of the container, install pnpm manually and run `pnpm install` before `pnpm dev`.
+## Development Setup
+
+1. Open in VS Code with Dev Containers extension
+2. Rebuild container: `Dev Containers: Rebuild Container`
+3. Database container starts automatically
+4. Run migrations: `make migrate`
+5. Start dev servers: `make dev`
+
+Access:
+- Frontend: http://localhost:5173
+- Backend: http://localhost:8080
+- Database: localhost:5432 (user: app, pass: password)

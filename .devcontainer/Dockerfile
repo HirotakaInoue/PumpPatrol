@@ -41,6 +41,9 @@ RUN mkdir -p ${RUSTUP_HOME} ${CARGO_HOME} \
     && ${CARGO_HOME}/bin/rustup component add rustfmt clippy \
     && chown -R vscode:vscode ${RUSTUP_HOME} ${CARGO_HOME}
 
+# Install sqlx-cli for database migrations
+RUN ${CARGO_HOME}/bin/cargo install sqlx-cli --no-default-features --features postgres
+
 # Install Claude
 RUN npm install -g @anthropic-ai/claude-code@$latest
 

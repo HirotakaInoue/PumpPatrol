@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        NODE_VERSION: "24"
+        PNPM_VERSION: "10.22.0"
+        RUST_VERSION: "1.91.1"
+    volumes:
+      - ..:/workspaces/PumpPatrol:cached
+    command: sleep infinity
+    network_mode: service:db
+    depends_on:
+      - db
+
+  db:
+    image: postgres:18
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: PumpPatrolDB
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

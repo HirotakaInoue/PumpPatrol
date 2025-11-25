@@ -1,19 +1,14 @@
 {
   "name": "PumpPatrol-dev",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": "..",
-    "args": {
-      "NODE_VERSION": "24",
-      "PNPM_VERSION": "10.22.0",
-      "RUST_VERSION": "1.91.1"
-    }
-  },
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
   "workspaceFolder": "/workspaces/PumpPatrol",
   "remoteUser": "vscode",
   "postCreateCommand": "if [ -f web/package.json ]; then cd web && pnpm install; else echo 'Skip pnpm install (web directory is empty)'; fi",
   "forwardPorts": [
     3000,
+    5173,
+    5432,
     8080
   ],
   "customizations": {
