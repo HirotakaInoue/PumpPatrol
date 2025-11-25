@@ -1,13 +1,24 @@
 use axum::{Json, Router, routing::get};
 use serde::Serialize;
+use tower_http::cors::{Any, CorsLayer};
 use uuid::Uuid;
 
 #[tokio::main]
 async fn main() {
     // build our application with a single route
+    let cors = CorsLayer::new()
+        .allow_origin(
+            "http://localhost:5173"
+                .parse::<axum::http::HeaderValue>()
+                .unwrap(),
+        )
+        .allow_methods(Any)
+        .allow_headers(Any);
+
     let app = Router::new()
         .route("/", get(|| async { "Hello, World!" }))
-        .route("/training/type", get(get_training_type));
+        .route("/training/type", get(get_training_type))
+        .layer(cors);
 
     // run our app with hyper, listening globally on port 3000
     let listener = tokio::net::TcpListener::bind("0.0.0.0:8080").await.unwrap();
@@ -28,7 +39,7 @@ impl TrainingType {
 
 #[derive(Serialize)]
 struct TrainingTypes {
-    training: Vec<TrainingType>,
+    trainings: Vec<TrainingType>,
 }
 
 async fn get_training_type() -> Json<TrainingTypes> {
@@ -38,7 +49,7 @@ async fn get_training_type() -> Json<TrainingTypes> {
     trainings.push(TrainingType::new(Uuid::now_v7(), "Dead Lift".to_string()));
 
     let training_types = TrainingTypes {
-        training: trainings,
+        trainings: trainings,
     };
 
     Json(training_types)

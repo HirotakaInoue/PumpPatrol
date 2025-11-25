@@ -41,6 +41,9 @@ RUN mkdir -p ${RUSTUP_HOME} ${CARGO_HOME} \
     && ${CARGO_HOME}/bin/rustup component add rustfmt clippy \
     && chown -R vscode:vscode ${RUSTUP_HOME} ${CARGO_HOME}
 
+# Install Claude
+RUN npm install -g @anthropic-ai/claude-code@$latest
+
 
 WORKDIR /workspaces/PumpPatrol
 
