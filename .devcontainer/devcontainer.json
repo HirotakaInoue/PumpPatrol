@@ -4,6 +4,10 @@
   "service": "app",
   "workspaceFolder": "/workspaces/PumpPatrol",
   "remoteUser": "vscode",
+  "remoteEnv": {
+    "CARGO_HOME": "${localEnv:HOME}/.cargo",
+    "RUSTUP_HOME": "${localEnv:HOME}/.rustup"
+  },  
   "postCreateCommand": "if [ -f web/package.json ]; then cd web && pnpm install; else echo 'Skip pnpm install (web directory is empty)'; fi",
   "forwardPorts": [
     3000,
