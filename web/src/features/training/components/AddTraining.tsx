@@ -1,13 +1,9 @@
-import { TrainingSelection } from "./TrainingSelection"
-
+import { MenuSection } from "./MenuSection";
 
 export const AddTraining = () => {
-
-    return (
-        <div>
-            <TrainingSelection></TrainingSelection>
-            <input type="number"></input>
-            回
-        </div>
-    )
-}
+  return (
+    <div>
+      <MenuSection></MenuSection>
+    </div>
+  );
+};
