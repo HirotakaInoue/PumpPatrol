@@ -1,6 +1,6 @@
 import { TrainingSelection } from "./TrainingSelection";
 import { MenuSectionSets } from "./MenuSectionSets";
-import { AddrButton } from "../../../components/AddButton";
+import { AddButton } from "../../../components/AddButton";
 import type { AddButtonProps } from "../../../components/AddButton";
 
 import { useState } from "react";
@@ -16,7 +16,7 @@ export const MenuSection = () => {
     <div>
       <TrainingSelection></TrainingSelection>
       <MenuSectionSets {...{ count: setNum }}></MenuSectionSets>
-      <AddrButton {...add_button_props}></AddrButton>
+      <AddButton {...add_button_props}></AddButton>
     </div>
   );
 };

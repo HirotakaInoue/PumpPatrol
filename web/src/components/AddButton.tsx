@@ -3,7 +3,7 @@ export type AddButtonProps = {
   setter: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export const AddrButton = ({ label, setter }: AddButtonProps) => {
+export const AddButton = ({ label, setter }: AddButtonProps) => {
   return (
     <div>
       <button

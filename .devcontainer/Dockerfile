@@ -38,12 +38,11 @@ RUN apt-get update \
 RUN mkdir -p ${RUSTUP_HOME} ${CARGO_HOME} \
     && export RUSTUP_HOME=${RUSTUP_HOME} CARGO_HOME=${CARGO_HOME} \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile default --default-toolchain ${RUST_VERSION} \
-    && ${CARGO_HOME}/bin/rustup component add rustfmt clippy \
-    && chown -R vscode:vscode ${RUSTUP_HOME} ${CARGO_HOME}
+    && ${CARGO_HOME}/bin/rustup component add rustfmt clippy 
 
 # Install sqlx-cli for database migrations
-RUN ${CARGO_HOME}/bin/cargo install sqlx-cli --no-default-features --features postgres
-
+RUN ${CARGO_HOME}/bin/cargo install sqlx-cli --no-default-features --features postgres \
+    && chown -R vscode:vscode ${RUSTUP_HOME} ${CARGO_HOME}
 # Install Claude
 RUN npm install -g @anthropic-ai/claude-code@$latest
 
