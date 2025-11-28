@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- リスト -->
+  <rect x="132" y="140" width="240" height="20" rx="8" fill="black"/>
+  <rect x="132" y="200" width="200" height="20" rx="8" fill="black" fill-opacity="0.8"/>
+  <rect x="132" y="260" width="220" height="20" rx="8" fill="black" fill-opacity="0.6"/>
+  <rect x="132" y="320" width="180" height="20" rx="8" fill="black" fill-opacity="0.4"/>
+
+  <!-- 時計 -->
+  <circle cx="360" cy="320" r="60" fill="none" stroke="black" stroke-width="12"/>
+  <line x1="360" y1="290" x2="360" y2="320" stroke="black" stroke-width="12" stroke-linecap="round"/>
+  <line x1="360" y1="320" x2="390" y2="336" stroke="black" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Text -->
+  <text x="256" y="460" font-family="system-ui, sans-serif" font-size="60" text-anchor="middle" fill="black">
+    History
+  </text>
+</svg>

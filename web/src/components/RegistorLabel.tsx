@@ -14,8 +14,11 @@ export const RegistorLabel = ({
   onClick,
 }: RegistorLabelProps) => {
   return (
-    <div className="registoreLabel">
-      <button className="registorLabelButton" onClick={onClick}>
+    <div className="relative flex items-center justify-center p-2">
+      <button
+        className="relative flex-col items-center justify-center bg-blue-400 text-black font-bold font-xl hover:bg-blue-500 border-2 border-black rounded-md"
+        onClick={onClick}
+      >
         <img src={image} width={width} height={height} />
         {label}
       </button>

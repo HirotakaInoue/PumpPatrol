@@ -1,61 +1,20 @@
-<svg
-  width="300"
-  height="300"
-  viewBox="0 0 300 300"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <!-- 背景は透明 -->
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- 体重計外枠 -->
+  <rect x="136" y="136" width="240" height="240" rx="48" fill="none" stroke="black" stroke-width="14"/>
 
-  <!-- 体重計の外枠 -->
-  <rect
-    x="60"
-    y="70"
-    width="180"
-    height="160"
-    rx="30"
-    ry="30"
-    fill="none"
-    stroke="#FFFFFF"
-    stroke-width="10"
-  />
-
-  <!-- 上部の丸いメーター部分 -->
-  <path
-    d="M80 130
-       A70 70 0 0 1 220 130"
-    fill="none"
-    stroke="#FFFFFF"
-    stroke-width="8"
-  />
-
-  <!-- 針の中心 -->
-  <circle
-    cx="150"
-    cy="130"
-    r="6"
-    fill="#FFFFFF"
-  />
+  <!-- メーターパネル -->
+  <rect x="180" y="152" width="152" height="80" rx="20" fill="none" stroke="black" stroke-width="10"/>
 
   <!-- 針 -->
-  <line
-    x1="150"
-    y1="130"
-    x2="185"
-    y2="110"
-    stroke="#FFFFFF"
-    stroke-width="6"
-    stroke-linecap="round"
-  />
+  <circle cx="256" cy="192" r="10" fill="black"/>
+  <line x1="256" y1="192" x2="298" y2="176" stroke="black" stroke-width="10" stroke-linecap="round"/>
 
-  <!-- WEIGHT テキスト -->
-  <text
-    x="150"
-    y="250"
-    text-anchor="middle"
-    fill="#FFFFFF"
-    font-size="28"
-    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-  >
-    WEIGHT
+  <!-- 足の位置 -->
+  <circle cx="208" cy="300" r="28" fill="none" stroke="black" stroke-width="10"/>
+  <circle cx="304" cy="300" r="28" fill="none" stroke="black" stroke-width="10"/>
+
+  <!-- Text -->
+  <text x="256" y="460" font-family="system-ui, sans-serif" font-size="60" text-anchor="middle" fill="black">
+    Weight
   </text>
 </svg>

@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(256 256)">
+    <!-- 歯 -->
+    <g fill="black">
+      <rect x="-20" y="-140" width="40" height="40" rx="8"/>
+      <rect x="-20" y="-140" width="40" height="40" rx="8" transform="rotate(45)"/>
+      <rect x="-20" y="-140" width="40" height="40" rx="8" transform="rotate(90)"/>
+      <rect x="-20" y="-140" width="40" height="40" rx="8" transform="rotate(135)"/>
+      <rect x="-20" y="-140" width="40" height="40" rx="8" transform="rotate(180)"/>
+      <rect x="-20" y="-140" width="40" height="40" rx="8" transform="rotate(225)"/>
+      <rect x="-20" y="-140" width="40" height="40" rx="8" transform="rotate(270)"/>
+      <rect x="-20" y="-140" width="40" height="40" rx="8" transform="rotate(315)"/>
+    </g>
+
+    <!-- 内側のギア -->
+    <circle cx="0" cy="0" r="90" fill="none" stroke="black" stroke-width="18"/>
+    <circle cx="0" cy="0" r="36" fill="none" stroke="black" stroke-width="12"/>
+  </g>
+
+  <!-- Text -->
+  <text x="256" y="460" font-family="system-ui, sans-serif" font-size="60" text-anchor="middle" fill="black">
+    Setting
+  </text>
+</svg>
