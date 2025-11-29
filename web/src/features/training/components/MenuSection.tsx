@@ -8,11 +8,11 @@ import type { UseFormRegister, UseFormSetValue } from "react-hook-form";
 import { useState, useEffect } from "react";
 
 export const MenuSection = ({
-  idx,
+  menu_idx,
   register,
   setValue,
 }: {
-  idx: number;
+  menu_idx: number;
   register: UseFormRegister<TrainingFormValues>;
   setValue: UseFormSetValue<TrainingFormValues>;
 }) => {
@@ -24,17 +24,21 @@ export const MenuSection = ({
 
   // set setNum to register.trainingSetNumber.
   useEffect(() => {
-    setValue(`trainingSets.${idx}.trainingNumber`, setNum);
-  }, [setNum, setValue, idx]);
+    setValue(`trainingSets.${menu_idx}.trainingNumber`, setNum);
+  }, [setNum, setValue, menu_idx]);
 
   return (
     <div>
       <TrainingSelection
         register={register}
         setValue={setValue}
-        idx={idx}
+        idx={menu_idx}
       ></TrainingSelection>
-      <MenuSectionSets {...{ count: setNum }}></MenuSectionSets>
+      <MenuSectionSets
+        register={register}
+        count={setNum}
+        menu_idx={menu_idx}
+      ></MenuSectionSets>
       <AddButton {...add_button_props}></AddButton>
     </div>
   );

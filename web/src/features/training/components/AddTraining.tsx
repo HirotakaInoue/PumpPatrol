@@ -29,7 +29,8 @@ export const AddTraining = ({
     <div>
       {Array.from({ length: menuNum }, (_, idx) => (
         <MenuSection
-          idx={idx}
+          key={idx}
+          menu_idx={idx}
           register={register}
           setValue={setValue}
         ></MenuSection>
