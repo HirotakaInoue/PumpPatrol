@@ -11,9 +11,10 @@ export const TrainingSet = ({
   set_idx: number;
 }) => {
   return (
-    <div>
+    <div className="flex items-center justify-right">
       <input
         type="number"
+        className="w-1/4 text-right my-2 mx-1 bg-gray-300 text-black rounded-md p-1"
         {...register(
           `trainingSets.${menu_idx}.trainingSet.${set_idx}.trainingWeight`
         )}
@@ -21,6 +22,7 @@ export const TrainingSet = ({
       KG
       <input
         type="number"
+        className="w-1/4 text-right my-2 mx-1 bg-gray-300 text-black rounded-md p-1"
         {...register(
           `trainingSets.${menu_idx}.trainingSet.${set_idx}.trainingReps`
         )}

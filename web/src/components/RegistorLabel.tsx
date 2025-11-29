@@ -10,7 +10,6 @@ export const RegistorLabel = ({
   image,
   width,
   height,
-  label,
   onClick,
 }: RegistorLabelProps) => {
   return (
@@ -20,7 +19,6 @@ export const RegistorLabel = ({
         onClick={onClick}
       >
         <img src={image} width={width} height={height} />
-        {label}
       </button>
     </div>
   );

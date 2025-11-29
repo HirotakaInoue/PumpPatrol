@@ -54,16 +54,19 @@ export const TrainingSelection = ({
   };
 
   return training_types != null ? (
-    <select
-      {...(register(`trainingSets.${idx}.trainingType`),
-      { onChange: handleChange })}
-    >
-      {training_types.trainings.map((t) => (
-        <option key={t.id} value={t.id}>
-          {t.name}
-        </option>
-      ))}
-    </select>
+    <div className="flex items-center justify-right bg-blue-700 p-1">
+      <select
+        {...(register(`trainingSets.${idx}.trainingType`),
+        { onChange: handleChange })}
+        className="bg-blue-700 text-white rounded-md p-1"
+      >
+        {training_types.trainings.map((t) => (
+          <option key={t.id} value={t.id}>
+            {t.name}
+          </option>
+        ))}
+      </select>
+    </div>
   ) : (
     <div>Loading...</div>
   );
