@@ -28,7 +28,7 @@ export const MenuSection = ({
   }, [setNum, setValue, menu_idx]);
 
   return (
-    <div className="bg-gray-600 rounded-md p-2 m-2">
+    <div className="bg-[var(--color-surface)] rounded-lg p-4 m-3 shadow-md border border-[var(--color-surface-light)]">
       <TrainingSelection
         register={register}
         setValue={setValue}

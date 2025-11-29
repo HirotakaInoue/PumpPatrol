@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const MenuBar = () => {
   const navigate = useNavigate();
   return (
-    <div className="relative flex items-center justify-center bg-black p-4">
+    <div className="relative flex items-center justify-center bg-[var(--color-background)] p-4 shadow-lg">
       <img
         src={MenuIcon}
         width={50}
@@ -15,7 +15,7 @@ export const MenuBar = () => {
       />
       <button
         onClick={() => navigate("/")}
-        className="text-white text-xl font-bold underline hover:text-blue-500"
+        className="text-white text-xl font-bold hover:text-[var(--color-accent)] transition-colors duration-200"
       >
         Pump Patrol
       </button>

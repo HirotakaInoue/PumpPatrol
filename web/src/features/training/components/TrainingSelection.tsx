@@ -54,11 +54,11 @@ export const TrainingSelection = ({
   };
 
   return training_types != null ? (
-    <div className="flex items-center justify-right bg-blue-700 p-1">
+    <div className="flex items-center justify-end bg-[var(--color-surface-light)] p-3 rounded-t-lg">
       <select
         {...(register(`trainingSets.${idx}.trainingType`),
         { onChange: handleChange })}
-        className="bg-blue-700 text-white rounded-md p-1"
+        className="bg-transparent text-white font-medium rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
       >
         {training_types.trainings.map((t) => (
           <option key={t.id} value={t.id}>

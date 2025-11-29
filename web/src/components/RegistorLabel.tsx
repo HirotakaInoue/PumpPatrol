@@ -15,7 +15,7 @@ export const RegistorLabel = ({
   return (
     <div className="relative flex items-center justify-center p-2">
       <button
-        className="relative flex-col items-center justify-center bg-blue-400 text-black font-bold font-xl hover:bg-blue-500 border-2 border-black rounded-md"
+        className="relative flex-col items-center justify-center bg-[var(--color-primary)] text-white font-bold text-xl hover:bg-[var(--color-primary-dark)] shadow-md hover:shadow-xl border-2 border-transparent rounded-lg transition-all duration-200"
         onClick={onClick}
       >
         <img src={image} width={width} height={height} />

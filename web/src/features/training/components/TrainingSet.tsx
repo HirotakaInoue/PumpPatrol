@@ -11,23 +11,23 @@ export const TrainingSet = ({
   set_idx: number;
 }) => {
   return (
-    <div className="flex items-center justify-right">
+    <div className="flex items-center justify-end gap-2 py-2">
       <input
         type="number"
-        className="w-1/4 text-right my-2 mx-1 bg-gray-300 text-black rounded-md p-1"
+        className="w-1/4 text-right bg-[var(--color-surface-light)] text-white rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-transparent"
         {...register(
           `trainingSets.${menu_idx}.trainingSet.${set_idx}.trainingWeight`
         )}
       ></input>
-      KG
+      <span className="text-white">KG</span>
       <input
         type="number"
-        className="w-1/4 text-right my-2 mx-1 bg-gray-300 text-black rounded-md p-1"
+        className="w-1/4 text-right bg-[var(--color-surface-light)] text-white rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] border border-transparent"
         {...register(
           `trainingSets.${menu_idx}.trainingSet.${set_idx}.trainingReps`
         )}
       ></input>
-      rep
+      <span className="text-white">rep</span>
     </div>
   );
 };

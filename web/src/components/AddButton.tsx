@@ -5,9 +5,9 @@ export type AddButtonProps = {
 
 export const AddButton = ({ label, setter }: AddButtonProps) => {
   return (
-    <div>
+    <div className="p-2">
       <button
-        className="bg-gray-600 text-black underline hover:text-blue-500"
+        className="bg-[var(--color-secondary)] hover:bg-[var(--color-secondary)]/80 text-white font-medium py-2 px-4 rounded-md transition-all duration-200"
         onClick={() => {
           setter((prev) => prev + 1);
         }}

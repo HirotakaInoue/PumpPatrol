@@ -47,7 +47,7 @@ export function HomePage() {
   return (
     <>
       <MenuBar></MenuBar>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-4 p-4 bg-[var(--color-background)] min-h-screen">
         <RegistorLabel {...registor_training}></RegistorLabel>
         <RegistorLabel {...history}></RegistorLabel>
         <RegistorLabel {...registor_weight}></RegistorLabel>
