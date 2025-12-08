@@ -54,20 +54,32 @@ export const TrainingSelection = ({
   };
 
   return training_types != null ? (
-    <div className="flex items-center justify-end bg-[var(--color-surface-light)] p-3 rounded-t-lg">
+    <div className="flex items-center justify-between mb-4 pb-4 border-b-2 border-[var(--color-surface-light)]">
+      <label
+        className="text-[var(--color-text-secondary)] uppercase text-sm tracking-wider font-semibold"
+        style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.15em' }}
+      >
+        Exercise
+      </label>
       <select
         {...(register(`trainingSets.${idx}.trainingType`),
         { onChange: handleChange })}
-        className="bg-transparent text-white font-medium rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+        className="bg-[var(--color-background)] text-[var(--color-text-primary)] font-medium p-3 border-2 border-[var(--color-surface-light)] focus:outline-none focus:border-[var(--color-accent)] transition-colors duration-200 cursor-pointer"
+        style={{ fontFamily: "'Inter', sans-serif" }}
       >
         {training_types.trainings.map((t) => (
-          <option key={t.id} value={t.id}>
+          <option key={t.id} value={t.id} className="bg-[var(--color-surface)]">
             {t.name}
           </option>
         ))}
       </select>
     </div>
   ) : (
-    <div>Loading...</div>
+    <div className="flex items-center justify-center p-4">
+      <span className="text-[var(--color-text-secondary)] uppercase tracking-wider"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+        Loading...
+      </span>
+    </div>
   );
 };

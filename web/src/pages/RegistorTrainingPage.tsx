@@ -43,10 +43,18 @@ export function RegistorTrainingPage() {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="bg-[var(--color-background)] min-h-screen">
         <MenuBar></MenuBar>
-        <AddTraining register={register} setValue={setValue}></AddTraining>
-        <RegistorButton {...registor_button_props}></RegistorButton>
+        <div className="relative">
+          {/* Decorative background elements */}
+          <div className="absolute top-10 right-5 w-48 h-48 bg-[var(--color-primary)] opacity-5 blur-3xl" />
+          <div className="absolute bottom-10 left-5 w-48 h-48 bg-[var(--color-accent)] opacity-5 blur-3xl" />
+
+          <div className="relative max-w-4xl mx-auto">
+            <AddTraining register={register} setValue={setValue}></AddTraining>
+            <RegistorButton {...registor_button_props}></RegistorButton>
+          </div>
+        </div>
       </form>
     </>
   );

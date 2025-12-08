@@ -47,11 +47,43 @@ export function HomePage() {
   return (
     <>
       <MenuBar></MenuBar>
-      <div className="grid grid-cols-2 gap-4 p-4 bg-[var(--color-background)] min-h-screen">
-        <RegistorLabel {...registor_training}></RegistorLabel>
-        <RegistorLabel {...history}></RegistorLabel>
-        <RegistorLabel {...registor_weight}></RegistorLabel>
-        <RegistorLabel {...settings}></RegistorLabel>
+      <div className="relative bg-[var(--color-background)] min-h-screen p-6">
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-10 w-64 h-64 bg-[var(--color-primary)] opacity-5 blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-48 h-48 bg-[var(--color-accent)] opacity-5 blur-3xl" />
+
+        {/* Asymmetric grid layout */}
+        <div className="relative max-w-7xl mx-auto">
+          {/* Top section - Featured actions */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="md:col-span-1">
+              <RegistorLabel {...registor_training}></RegistorLabel>
+            </div>
+            <div className="md:col-span-1">
+              <RegistorLabel {...registor_weight}></RegistorLabel>
+            </div>
+          </div>
+
+          {/* Bottom section - Secondary actions */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="md:col-span-1">
+              <RegistorLabel {...history}></RegistorLabel>
+            </div>
+            <div className="md:col-span-1">
+              <RegistorLabel {...settings}></RegistorLabel>
+            </div>
+          </div>
+
+          {/* Motivational text overlay */}
+          <div className="mt-12 text-center">
+            <p
+              className="text-[var(--color-text-secondary)] text-sm uppercase tracking-[0.3em] opacity-60"
+              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+            >
+              Track • Progress • Dominate
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -5,20 +5,22 @@ import { useNavigate } from "react-router-dom";
 export const MenuBar = () => {
   const navigate = useNavigate();
   return (
-    <div className="relative flex items-center justify-center bg-[var(--color-background)] p-4 shadow-lg">
+    <div className="relative flex items-center justify-between bg-[var(--color-secondary)] px-6 py-5 border-b-4 border-[var(--color-primary)]">
       <img
         src={MenuIcon}
-        width={50}
-        height={50}
+        width={44}
+        height={44}
         alt="menu"
-        className="absolute left-4"
+        className="cursor-pointer hover:scale-110 transition-transform duration-200"
       />
       <button
         onClick={() => navigate("/")}
-        className="text-white text-xl font-bold hover:text-[var(--color-accent)] transition-colors duration-200"
+        className="text-white text-3xl tracking-wider uppercase hover:text-[var(--color-accent)] transition-all duration-300 hover:scale-105"
+        style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.15em' }}
       >
         Pump Patrol
       </button>
+      <div className="w-11" />
     </div>
   );
 };

@@ -28,7 +28,13 @@ export const MenuSection = ({
   }, [setNum, setValue, menu_idx]);
 
   return (
-    <div className="bg-[var(--color-surface)] rounded-lg p-4 m-3 shadow-md border border-[var(--color-surface-light)]">
+    <div className="relative bg-[var(--color-surface)] p-6 m-4 border-2 border-[var(--color-surface-light)] overflow-hidden"
+         style={{
+           clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)'
+         }}>
+      {/* Top accent bar */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-primary)]" />
+
       <TrainingSelection
         register={register}
         setValue={setValue}
